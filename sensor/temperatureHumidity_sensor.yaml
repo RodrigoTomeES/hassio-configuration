@@ -1,0 +1,15 @@
+####################################################
+#                                                  #
+#                Sensor Rodrigo                    #
+#                                                  #
+####################################################
+- platform: mitemp_bt
+  name: temperatureHumidity_Rodrigo
+  mac: !secret THS_mac
+  force_update: true
+  median: 1
+  cache_value: 1200
+  monitored_conditions:
+    - temperature
+    - humidity
+    - battery

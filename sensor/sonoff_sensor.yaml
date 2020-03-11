@@ -1,0 +1,71 @@
+####################################################
+#                                                  #
+#                  SONOFF SALON                    #
+#                                                  #
+####################################################
+- platform: mqtt
+  name: "pow_salon_energia_hoy"
+  state_topic: "tele/salon/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Today"] }}'
+  unit_of_measurement: "kWh"
+- platform: mqtt
+  name: "pow_salon_energia_ayer"
+  state_topic: "tele/salon/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
+  unit_of_measurement: "kWh"
+- platform: mqtt
+  name: "pow_salon_energia_total"
+  state_topic: "tele/salon/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  unit_of_measurement: "kWh"
+- platform: mqtt
+  name: "pow_salon_potencia"
+  state_topic: "tele/salon/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Power"] }}'
+  unit_of_measurement: "W"
+- platform: mqtt
+  name: "pow_salon_voltaje"
+  state_topic: "tele/salon/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Voltage"] }}'
+  unit_of_measurement: "V"
+- platform: mqtt
+  name: "pow_salon_corriente"
+  state_topic: "tele/salon/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Current"] }}'
+  unit_of_measurement: "A"
+
+####################################################
+#                                                  #
+#                SONOFF RODRIGO                    #
+#                                                  #
+####################################################
+- platform: mqtt
+  name: "pow_rodrigo_energia_hoy"
+  state_topic: "tele/rodrigo/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Today"] }}'
+  unit_of_measurement: "kWh"
+- platform: mqtt
+  name: "pow_rodrigo_energia_ayer"
+  state_topic: "tele/rodrigo/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
+  unit_of_measurement: "kWh"
+- platform: mqtt
+  name: "pow_rodrigo_energia_total"
+  state_topic: "tele/rodrigo/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  unit_of_measurement: "kWh"
+- platform: mqtt
+  name: "pow_rodrigo_potencia"
+  state_topic: "tele/rodrigo/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Power"] }}'
+  unit_of_measurement: "W"
+- platform: mqtt
+  name: "pow_rodrigo_voltaje"
+  state_topic: "tele/rodrigo/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Voltage"] }}'
+  unit_of_measurement: "V"
+- platform: mqtt
+  name: "pow_rodrigo_corriente"
+  state_topic: "tele/rodrigo/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Current"] }}'
+  unit_of_measurement: "A"

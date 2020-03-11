@@ -1,0 +1,259 @@
+##################################################################
+######################        Luces       ########################
+##################################################################
+
+#Gateway
+light.gateway_light_f0b429cc5628:
+  friendly_name: Gateway Light
+
+#Luces Pasiillo
+light.yeelight_color1_7811dc6b74de :
+  friendly_name: Pasillo 1
+light.yeelight_color1_34ce008cc83e :
+  friendly_name: Pasillo 2
+
+##################################################################
+######################      Sensores      ########################
+##################################################################
+
+#Xiaomi
+binary_sensor.door_window_sensor_158d00012afc04:
+  friendly_name: Sensor puerta principal
+sensor.humidity_158d0001172a0c:
+  friendly_name: Humedad
+sensor.illumination_f0b429cc5628:
+  friendly_name: Iluminación
+binary_sensor.motion_sensor_158d00011373e4:
+  friendly_name: Sensor de movimiento
+sensor.temperature_158d0001172a0c:
+  friendly_name: Temperatura
+
+#Rasberry
+sensor.ipv4_address_eth0:
+  friendly_name: IP Raspberry
+sensor.cpu_temperatura:
+  friendly_name: Temperatura CPU
+sensor.processor_use:
+  friendly_name: Uso CPU
+sensor.disk_free_home:
+  friendly_name: Espacio SD libre
+sensor.disk_use_percent_home:
+  friendly_name: Espacio SD usado %
+sensor.memory_free:
+  friendly_name: RAM libre
+sensor.memory_use_percent:
+  friendly_name: RAM en uso %
+sensor.last_boot:
+  friendly_name: Último reinicio
+sensor.last_boot_templated:
+  friendly_name: Último reinicio
+sensor.server_uptime:
+  friendly_name: Tiempo de actividad
+
+#Temperature and Humidity Rodrigo
+sensor.temperaturehumidity_rodrigo_battery:
+  friendly_name: Batería
+  icon: mdi:battery-bluetooth-variant
+sensor.temperaturehumidity_rodrigo_humidity:
+  friendly_name: Humedad
+  icon: mdi:water-percent
+sensor.temperaturehumidity_rodrigo_temperature:
+  friendly_name: Temperatura
+  icon: mdi:temperature-celsius
+
+##################################################################
+######################       Switch       ########################
+##################################################################
+
+#Xiaomi
+binary_sensor.switch_158d00010aa102:
+  friendly_name: Switch 1
+binary_sensor.switch_158d00019ca92d:
+  friendly_name: Switch 2
+binary_sensor.cube_158d000101b8fb:
+  friendly_name: Cubo
+
+##################################################################
+######################       Sonoff       ########################
+##################################################################
+
+#Sonoff POW Salon
+switch.on_off_sonoff_salon:
+  friendly_name: Power Sonoff salon
+  icon: mdi:power
+  assumed_state: false
+sensor.pow_salon_energia_hoy:
+  friendly_name: Consumido (hoy)
+  icon: mdi:calculator
+sensor.pow_salon_energia_ayer:
+  friendly_name: Consumido (ayer)
+  icon: mdi:calendar-today
+sensor.pow_salon_energia_total:
+  friendly_name: Consumido (total)
+  icon: mdi:calendar-check
+sensor.pow_salon_potencia:
+  friendly_name: Potencia actual
+  icon: mdi:speedometer
+sensor.pow_salon_voltaje:
+  friendly_name: Voltaje actual
+  icon: mdi:flash
+sensor.pow_salon_corriente:
+  friendly_name: Corriente actual
+  icon: mdi:video-input-svideo
+
+#Sonoff POW Rodrigo
+switch.on_off_sonoff_rodrigo:
+  friendly_name: Power Sonoff Rodrigo
+  icon: mdi:power
+  assumed_state: false
+sensor.pow_rodrigo_energia_hoy:
+  friendly_name: Consumido (hoy)
+  icon: mdi:calculator
+sensor.pow_rodrigo_energia_ayer:
+  friendly_name: Consumido (ayer)
+  icon: mdi:calendar-today
+sensor.pow_rodrigo_energia_total:
+  friendly_name: Consumido (total)
+  icon: mdi:calendar-check
+sensor.pow_rodrigo_potencia:
+  friendly_name: Potencia actual
+  icon: mdi:speedometer
+sensor.pow_rodrigo_voltaje:
+  friendly_name: Voltaje actual
+  icon: mdi:flash
+sensor.pow_rodrigo_corriente:
+  friendly_name: Corriente actual
+  icon: mdi:video-input-svideo
+
+##################################################################
+######################      Aparatos      ########################
+##################################################################
+
+#Samsung TV
+media_player.samsungtv_salon:
+  friendly_name: Samsung TV
+switch.samsung_tv_on_off:
+  friendly_name: On/Off
+  icon: mdi:power
+  assumed_state: false
+switch.samsung_tv_numeros:
+  friendly_name: Numeros
+  icon: mdi:numeric
+
+#Ventilador Salón
+switch.ventilador_salon_on_off:
+  friendly_name: On/Off
+  icon: mdi:power
+  assumed_state: false
+switch.ventilador_salon_dormir:
+  friendly_name: Dormir
+  icon: mdi:sleep
+switch.ventilador_salon_stop:
+  friendly_name: Parar
+  icon: mdi:stop-circle
+switch.ventilador_salon_velocidad:
+  friendly_name: Velocidad
+  icon: mdi:fan
+
+#Mini Cadena Rodrigo
+switch.cadena_rodrigo_on_off:
+  friendly_name: On/Off
+  icon: mdi:power
+  assumed_state: false
+switch.cadena_rodrigo_mute:
+  friendly_name: Mute
+  icon: mdi:volume-off
+  assumed_state: false
+switch.cadena_rodrigo_function:
+  friendly_name: Function
+  icon: mdi:function
+switch.cadena_rodrigo_sound:
+  friendly_name: Vol-/Vol+
+  icon: mdi:volume-high
+switch.cadena_rodrigo_sound_up:
+  friendly_name: Vol+
+  icon: mdi:volume-plus
+switch.cadena_rodrigo_sound_down:
+  friendly_name: Vol-
+  icon: mdi:volume-minus
+switch.cadena_rodrigo_play_pause:
+  friendly_name: Play/Pause
+  icon: mdi:play
+switch.cadena_rodrigo_next_previous:
+  friendly_name: Previous/Next
+  icon: mdi:code-tags
+switch.cadena_rodrigo_dimmer:
+  friendly_name: Dimmer
+  icon: mdi:power-sleep
+  assumed_state: false
+switch.cadena_rodrigo_xdss_plus:
+  friendly_name: XDSS Plus
+  icon: mdi:tune
+  assumed_state: false
+
+#Tira LED Rodrigo
+switch.tira_led_on_off:
+  friendly_name: On/Off
+  icon: mdi:power
+  assumed_state: false
+switch.tira_led_up_down:
+  friendly_name: Luz-/Luz+
+  icon: mdi:lightbulb-on
+switch.tira_led_red:
+  friendly_name: Red
+  icon: mdi:reddit
+switch.tira_led_green:
+  friendly_name: Green
+  icon: mdi:pine-tree
+switch.tira_led_blue:
+  friendly_name: Blue
+  icon: mdi:bluetooth
+switch.tira_led_blanca:
+  friendly_name: White
+  icon: mdi:snowflake
+
+#Ventilador Rodrigo
+switch.ventilador_rodrigo_luz:
+  friendly_name: On/Off
+  icon: mdi:power
+  assumed_state: false
+switch.ventilador_rodrigo_low:
+  friendly_name: Low
+  icon: mdi:fan
+  assumed_state: false
+switch.ventilador_rodrigo_medium:
+  friendly_name: Medium
+  icon: mdi:fan
+  assumed_state: false
+switch.ventilador_rodrigo_high:
+  friendly_name: High
+  icon: mdi:fan
+  assumed_state: false
+switch.ventilador_rodrigo_2h:
+  friendly_name: 2H
+  icon: mdi:av-timer
+  assumed_state: false
+switch.ventilador_rodrigo_4h:
+  friendly_name: 4H
+  icon: mdi:av-timer
+  assumed_state: false
+switch.ventilador_rodrigo_8h:
+  friendly_name: 8H
+  icon: mdi:av-timer
+  assumed_state: false
+
+##################################################################
+######################      Orden Ventanas
+########################
+##################################################################
+
+group.default_view:
+  order: 1
+group.rodrigo:
+  order: 2
+group.salon:
+  order: 3
+group.weather:
+  order: 4
+group.raspberry:
+  order: 5

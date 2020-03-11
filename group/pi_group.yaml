@@ -1,0 +1,20 @@
+####################################################
+#                                                  #
+#              GRUPO CPU.YAML                      #
+#                                                  #
+####################################################
+CPU:
+  name: Raspberry
+  view: no
+  icon: mdi:harddisk
+  entities:
+    - sensor.ipv4_address_eth0
+    - sensor.cpu_temperatura
+    - sensor.processor_use
+    - sensor.memory_free
+    - sensor.memory_use_percent
+    - sensor.disk_free_home
+    - sensor.disk_use_percent_home
+    - sensor.last_boot
+    - sensor.last_boot_templated
+    - sensor.server_uptime

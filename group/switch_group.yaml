@@ -1,0 +1,59 @@
+#Habitación Rodrigo
+minicadena_rodrigo:
+  name: Mini Cadena
+  view: no
+  control: hidden
+  entities:
+    - switch.cadena_rodrigo_on_off
+    - switch.cadena_rodrigo_mute
+    - switch.cadena_rodrigo_sound
+    - switch.cadena_rodrigo_function
+    - switch.cadena_rodrigo_play_pause
+    - switch.cadena_rodrigo_next_previous
+    - switch.cadena_rodrigo_dimmer
+    - switch.cadena_rodrigo_xdss_plus
+
+tira_led_rodrigo:
+  name: Tira LED
+  view: no
+  control: hidden
+  entities:
+    - switch.tira_led_on_off
+    - switch.tira_led_up_down
+    - switch.tira_led_red
+    - switch.tira_led_green
+    - switch.tira_led_blue
+    - switch.tira_led_blanca
+
+ventilador_rodrigo:
+  name: Ventilador
+  view: no
+  control: hidden
+  entities:
+    - switch.ventilador_rodrigo_luz
+    - switch.ventilador_rodrigo_low
+    - switch.ventilador_rodrigo_medium
+    - switch.ventilador_rodrigo_high
+    - switch.ventilador_rodrigo_2h
+    - switch.ventilador_rodrigo_4h
+    - switch.ventilador_rodrigo_8h
+
+
+#Salón
+tele_samsung:
+  name: Tele Salón
+  view: no
+  control: hidden
+  entities:
+    - switch.samsung_tv_on_off
+    - switch.samsung_tv_numeros
+
+ventilador_salon:
+  name: Ventilador
+  view: no
+  control: hidden
+  entities:
+    - switch.ventilador_salon_on_off
+    - switch.ventilador_salon_dormir
+    - switch.ventilador_salon_stop
+    - switch.ventilador_salon_velocidad

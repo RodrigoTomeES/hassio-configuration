@@ -1,0 +1,46 @@
+####################################################
+#                                                  #
+#                   SENSOR CPU                     #
+#                                                  #
+####################################################
+- platform: command_line
+  name: CPU Temperatura
+  command: "/bin/cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "°C"
+  value_template: '{{ value | multiply(0.001) | round(2) }}'
+
+- platform: systemmonitor
+  resources:
+  - type: last_boot
+  - type: disk_use_percent
+    arg: /home
+  - type: disk_free
+    arg: /home
+  - type: memory_use_percent
+  - type: memory_free
+  - type: processor_use
+  - type: ipv4_address
+    arg: eth0
+
+## Last boot Template
+- platform: template
+  sensors:
+    last_boot_templated:
+      entity_id: sensor.last_boot
+      icon_template: mdi:clock
+      value_template: "{{ as_timestamp(states.sensor.last_boot.state) | timestamp_custom('%d/%m/%Y %H:%M') }}"
+
+- platform: template
+  sensors:
+    server_uptime:
+      entity_id: sensor.time
+      icon_template: mdi:clock-start
+      value_template: >
+        {% set up_time = ((as_timestamp(now()) - as_timestamp(states('sensor.last_boot'))) / 60) | int %}
+        {% set minutes = (up_time % 60) | int %}
+        {% set hours = ((up_time % 1440) / 60) | int %}
+        {% set days = (up_time / 1440) | int %}
+        {{ days }}d {{ ' : ' }} {{ hours }}h {{ ' : ' }} {{ minutes }}m
+
+- platform: rpi_power
+  text_state: true

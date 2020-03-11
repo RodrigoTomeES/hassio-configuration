@@ -1,0 +1,11 @@
+####################################################
+#                                                  #
+#               LUCES PASILLO                      #
+#                                                  #
+####################################################
+pasillo:
+  name: Pasillo
+  entities:
+    - light.gateway_light_f0b429cc5628
+    - light.yeelight_color1_34ce008cc83e
+    - light.yeelight_color1_7811dc6b74de

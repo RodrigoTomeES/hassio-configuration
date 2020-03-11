@@ -1,0 +1,35 @@
+####################################################
+#                                                  #
+#                  SONOFF SALON                    #
+#                                                  #
+####################################################
+
+sonoff_salon:
+  name: Sonoff
+  view: no
+  entities:
+    - switch.on_off_sonoff_salon
+    - sensor.pow_salon_energia_hoy
+    - sensor.pow_salon_energia_ayer
+    - sensor.pow_salon_energia_total
+    - sensor.pow_salon_potencia
+    - sensor.pow_salon_voltaje
+    - sensor.pow_salon_corriente
+
+####################################################
+#                                                  #
+#                SONOFF Rodrigo                    #
+#                                                  #
+####################################################
+
+sonoff_rodrigo:
+  name: Sonoff
+  view: no
+  entities:
+    - switch.on_off_sonoff_rodrigo
+    - sensor.pow_rodrigo_energia_hoy
+    - sensor.pow_rodrigo_energia_ayer
+    - sensor.pow_rodrigo_energia_total
+    - sensor.pow_rodrigo_potencia
+    - sensor.pow_rodrigo_voltaje
+    - sensor.pow_rodrigo_corriente

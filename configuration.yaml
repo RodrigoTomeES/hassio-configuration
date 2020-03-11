@@ -1,0 +1,130 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+homeassistant:
+  customize: !include customize.yaml
+
+# Text to speech
+tts:
+  - platform: google_translate
+    service_name: google_say
+    language: 'es'
+
+ffmpeg:
+system_health:
+
+group: !include_dir_merge_named group
+automation: !include automations.yaml
+script: !include scripts.yaml
+sensor: !include_dir_merge_list sensor
+switch: !include_dir_merge_list switch
+frontend: !include frontend.yaml
+camera: !include_dir_merge_list camera
+
+http:
+  base_url: !secret domain
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - host: 192.168.25.93
+      mac: !secret gateway_hall_mac
+      key: !secret gateway_hall_key
+
+discovery:
+sun:
+
+#Paneles
+panel_iframe:
+  tiempo:
+    title: 'Tiempo'
+    url: !secret weather_url
+    icon: mdi:weather-sunny
+
+#HomeKit
+homekit:
+  auto_start: true
+  filter:
+    include_domains:
+      - climate
+      - light
+      - sensor
+      - switch
+      - light.yeelight_color1_34ce008cc83e
+      - light.yeelight_color1_7811dc6b74de
+    exclude_entities:
+      #Sensores
+      - sensor.coordination_158d000313677d
+      - sensor.cpu_temperatura
+      - sensor.disk_free_home
+      - sensor.disk_use_percent_home
+      - sensor.gt_ac5300_bytes_received
+      - sensor.gt_ac5300_bytes_sent
+      - sensor.gt_ac5300_kbyte_sec_received
+      - sensor.gt_ac5300_kbyte_sec_sent
+      - sensor.gt_ac5300_packets_received
+      - sensor.gt_ac5300_packets_sec_received
+      - sensor.gt_ac5300_packets_sec_sent
+      - sensor.gt_ac5300_packets_sent
+      - sensor.hacs
+      - sensor.ipv4_address_eth0
+      - sensor.last_boot
+      - sensor.last_boot_templated
+      - sensor.memory_free
+      - sensor.memory_use_percent
+      - sensor.pow_rodrigo_corriente
+      - sensor.pow_rodrigo_energia_ayer
+      - sensor.pow_rodrigo_energia_hoy
+      - sensor.pow_rodrigo_energia_total
+      - sensor.pow_rodrigo_potencia
+      - sensor.pow_rodrigo_voltaje
+      - sensor.pow_salon_corriente
+      - sensor.pow_salon_energia_ayer
+      - sensor.pow_salon_energia_hoy
+      - sensor.pow_salon_energia_total
+      - sensor.pow_salon_potencia
+      - sensor.pow_salon_voltaje
+      - sensor.processor_use
+      - sensor.server_uptime
+      - sensor.temperaturehumidity_rodrigo_battery
+      - sensor.tilt_angle_158d000313677d
+
+      #Switch
+      - switch.cadena_rodrigo_dimmer
+      - switch.cadena_rodrigo_function
+      - switch.cadena_rodrigo_mute
+      - switch.cadena_rodrigo_next_previous
+      - switch.cadena_rodrigo_play_pause
+      - switch.cadena_rodrigo_sound
+      - switch.cadena_rodrigo_sound_down
+      - switch.cadena_rodrigo_sound_up
+      - switch.cadena_rodrigo_xdss_plus
+      - switch.on_off_sonoff_rodrigo
+      - switch.on_off_sonoff_salon
+      - switch.samsung_tv_numeros
+      - switch.tira_led_blanca
+      - switch.tira_led_blue
+      - switch.tira_led_green
+      - switch.tira_led_red
+      - switch.tira_led_up_down
+      - switch.ventilador_rodrigo_2h
+      - switch.ventilador_rodrigo_4h
+      - switch.ventilador_rodrigo_8h
+      - switch.ventilador_rodrigo_high
+      - switch.ventilador_rodrigo_low
+      - switch.ventilador_rodrigo_luz
+      - switch.ventilador_rodrigo_medium
+      - switch.ventilador_salon_dormir
+      - switch.ventilador_salon_stop
+      - switch.ventilador_salon_velocidad
+
+tuya:
+  username: !secret tuya_user
+  password: !secret tuya_password
+  country_code: !secret tuya_country
