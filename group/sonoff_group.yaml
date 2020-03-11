@@ -6,7 +6,6 @@
 
 sonoff_salon:
   name: Sonoff
-  view: no
   entities:
     - switch.on_off_sonoff_salon
     - sensor.pow_salon_energia_hoy
@@ -24,7 +23,6 @@ sonoff_salon:
 
 sonoff_rodrigo:
   name: Sonoff
-  view: no
   entities:
     - switch.on_off_sonoff_rodrigo
     - sensor.pow_rodrigo_energia_hoy

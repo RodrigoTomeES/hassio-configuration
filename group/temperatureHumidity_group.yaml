@@ -5,7 +5,6 @@
 ####################################################
 temperatureHumidity_Rodrigo:
   name: Temperatura y Humedad
-  view: no
   entities:
     - sensor.temperaturehumidity_rodrigo_battery
     - sensor.temperaturehumidity_rodrigo_humidity

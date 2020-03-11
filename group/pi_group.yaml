@@ -5,7 +5,6 @@
 ####################################################
 CPU:
   name: Raspberry
-  view: no
   icon: mdi:harddisk
   entities:
     - sensor.ipv4_address_eth0
